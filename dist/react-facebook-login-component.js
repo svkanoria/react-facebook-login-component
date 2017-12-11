@@ -173,16 +173,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	          language = _props.language,
 	          fields = _props.fields,
 	          responseHandler = _props.responseHandler,
+	          tag = _props.tag,
 	          children = _props.children,
-	          buttonText = _props.buttonText,
-	          props = _objectWithoutProperties(_props, ['socialId', 'xfbml', 'cookie', 'version', 'language', 'fields', 'responseHandler', 'children', 'buttonText']);
+	          props = _objectWithoutProperties(_props, ['socialId', 'xfbml', 'cookie', 'version', 'language', 'fields', 'responseHandler', 'tag', 'children']);
 
-	      return _react2.default.createElement(
-	        'button',
-	        _extends({}, props, { onClick: this.clickHandler }),
-	        children,
-	        buttonText
-	      );
+	      return _react2.default.createElement(tag || 'button', _extends({
+	        onClick: this.clickHandler
+	      }, props), children);
 	    }
 	  }]);
 

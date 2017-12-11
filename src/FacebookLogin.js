@@ -53,14 +53,16 @@ export default class FacebookLogin extends Component {
   render() {
     const {
       socialId, xfbml, cookie, version, language, fields, responseHandler,
-      children, buttonText, ...props
+      tag, children, ...props
     } = this.props;
 
-    return (
-      <button {...props} onClick={this.clickHandler}>
-        {children}
-        {buttonText}
-      </button>
+    return React.createElement(
+      tag || 'button',
+      {
+        onClick: this.clickHandler,
+        ...props
+      },
+      children
     );
   }
 }
